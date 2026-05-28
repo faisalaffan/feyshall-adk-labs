@@ -1,5 +1,5 @@
 ---
-adk_version: "1.28"
+adk_version: "1.2.0"
 level: beginner
 languages: [java]
 ---
@@ -8,7 +8,7 @@ languages: [java]
 
 ## Concept
 
-ADK Java SDK uses builders and reactive streams. The agent loop returns `Flow<Event>` for streaming support.
+ADK Java SDK uses builders with `LlmAgent` as the primary agent class. The runner returns an iterable stream for processing events.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ ADK Java SDK uses builders and reactive streams. The agent loop returns `Flow<Ev
 <dependency>
     <groupId>com.google.adk</groupId>
     <artifactId>adk-java</artifactId>
-    <version>1.28.0</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
@@ -29,26 +29,30 @@ export GOOGLE_API_KEY="your-api-key"
 ```java
 package com.feyshall.cookbook;
 
-import com.google.adk.agent.Agent;
+import com.google.adk.agents.FunctionTool;
+import com.google.adk.agents.LlmAgent;
 import com.google.adk.runner.Runner;
-import com.google.adk.session.InMemorySessionService;
-import com.google.adk.session.Session;
-import com.google.adk.tool.FunctionTool;
+import com.google.adk.sessions.InMemorySessionService;
 import java.util.List;
-import java.util.concurrent.Flow;
 
 public class HelloWorld {
 
-    public static String greet(String name) {
+    public static String greet(FunctionTool.Args args) {
+        String name = args.getString("name");
         return "Hello, " + name + "! Welcome to ADK.";
     }
 
     public static void main(String[] args) throws Exception {
-        Agent agent = Agent.builder()
+        LlmAgent agent = LlmAgent.builder()
             .name("hello-world")
-            .model("gemini-2.5-flash")
+            .model("gemini-flash-latest")
             .instruction("You are a friendly assistant. Use the greet tool when someone tells you their name.")
-            .tools(List.of(FunctionTool.from(HelloWorld.class, "greet")))
+            .tools(List.of(
+                FunctionTool.create("greet", HelloWorld.class, "greet")
+                    .description("Greet someone by name")
+                    .parameter("name", FunctionTool.ParamType.STRING, "Person's name")
+                    .build()
+            ))
             .build();
 
         Runner runner = Runner.builder()
@@ -56,31 +60,22 @@ public class HelloWorld {
             .sessionService(new InMemorySessionService())
             .build();
 
-        Session session = runner.sessionService()
+        String sessionId = runner.sessionService()
             .createSession("hello-world", "user-1");
 
-        Flow.Publisher<Runner.Event> events = runner.run(
-            "My name is Faisal", session
-        );
-
-        events.subscribe(new Flow.Subscriber<>() {
-            public void onNext(Runner.Event event) {
+        runner.run("My name is Faisal", sessionId)
+            .forEach(event -> {
                 if (event.content() != null) {
                     System.out.print(event.content());
                 }
-            }
-            public void onComplete() { System.out.println(); }
-            public void onError(Throwable t) { t.printStackTrace(); }
-            public void onSubscribe(Flow.Subscription s) { s.request(Long.MAX_VALUE); }
-        });
-
-        Thread.sleep(5000); // Wait for async completion
+            });
+        System.out.println();
     }
 }
 ```
 
 ## Pitfalls
 
-- **Reactive streams**: ADK Java uses `Flow.Publisher` — you must subscribe to receive events. Don't forget to `request(n)`.
-- **Thread blocking**: The main thread exits before the agent finishes. Use `Thread.sleep()` or a `CountDownLatch` in examples; use proper async handling in production.
-- **Method reference tool binding**: `FunctionTool.from(Class, methodName)` uses reflection. Ensure your tool methods are `public static`.
+- **LlmAgent is the primary class**: Use `LlmAgent.builder()`, not `Agent.builder()`.
+- **FunctionTool uses builder pattern**: `FunctionTool.create(name, class, method).description(...).parameter(...).build()`.
+- **Model names**: Use `gemini-flash-latest` for automatic updates, or pin to a specific version.

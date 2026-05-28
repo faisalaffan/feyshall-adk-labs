@@ -16,12 +16,12 @@
 # feyshall-adk-labs
 
 <p align="center">
-  <a href="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/eval.yml"><img alt="Eval CI" src="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/eval.yml/badge.svg"></a>
-  <a href="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/security-scan.yml"><img alt="Security Scan" src="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/security-scan.yml/badge.svg"></a>
-  <a href="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/dart.yml"><img alt="Dart CI" src="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/dart.yml/badge.svg"></a>
-  <a href="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/go.yml"><img alt="Go CI" src="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/go.yml/badge.svg"></a>
+  <a href="https://github.com/faisalaffan/feyshall-adk-labs/actions/workflows/eval.yml"><img alt="Eval CI" src="https://github.com/faisalaffan/feyshall-adk-labs/actions/workflows/eval.yml/badge.svg"></a>
+  <a href="https://github.com/faisalaffan/feyshall-adk-labs/actions/workflows/security-scan.yml"><img alt="Security Scan" src="https://github.com/faisalaffan/feyshall-adk-labs/actions/workflows/security-scan.yml/badge.svg"></a>
+  <a href="https://github.com/faisalaffan/feyshall-adk-labs/actions/workflows/dart.yml"><img alt="Dart CI" src="https://github.com/faisalaffan/feyshall-adk-labs/actions/workflows/dart.yml/badge.svg"></a>
+  <a href="https://github.com/faisalaffan/feyshall-adk-labs/actions/workflows/go.yml"><img alt="Go CI" src="https://github.com/faisalaffan/feyshall-adk-labs/actions/workflows/go.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-  <a href="https://github.com/feyshall/feyshall-adk-labs"><img alt="GitHub stars" src="https://img.shields.io/github/stars/feyshall/feyshall-adk-labs"></a>
+  <a href="https://github.com/faisalaffan/feyshall-adk-labs"><img alt="GitHub stars" src="https://img.shields.io/github/stars/faisalaffan/feyshall-adk-labs"></a>
 </p>
 
 Google ADK Cookbook For Better Development Purpose
@@ -36,7 +36,7 @@ See the [Product Requirements Document](docs/PRD.md) for the full roadmap and ch
 
 ```bash
 # Clone the repository
-git clone https://github.com/feyshall/feyshall-adk-labs.git
+git clone https://github.com/faisalaffan/feyshall-adk-labs.git
 cd feyshall-adk-labs
 ```
 

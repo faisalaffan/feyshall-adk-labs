@@ -16,8 +16,8 @@
 # feyshall-adk-labs
 
 <p align="center">
-  <a href="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/eval.yml"><img alt="Eval CI" src="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/eval.yml/badge.svg"></a>
-  <a href="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/security-scan.yml"><img alt="Security Scan" src="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/security-scan.yml/badge.svg"></a>
+  <a href="https://github.com/faisalaffan/feyshall-adk-labs/actions/workflows/eval.yml"><img alt="Eval CI" src="https://github.com/faisalaffan/feyshall-adk-labs/actions/workflows/eval.yml/badge.svg"></a>
+  <a href="https://github.com/faisalaffan/feyshall-adk-labs/actions/workflows/security-scan.yml"><img alt="Security Scan" src="https://github.com/faisalaffan/feyshall-adk-labs/actions/workflows/security-scan.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 </p>
 
@@ -33,7 +33,7 @@ Lihat [Dokumen Persyaratan Produk](docs/PRD.md) untuk roadmap lengkap dan rincia
 
 ```bash
 # Clone repositori
-git clone https://github.com/feyshall/feyshall-adk-labs.git
+git clone https://github.com/faisalaffan/feyshall-adk-labs.git
 cd feyshall-adk-labs
 ```
 

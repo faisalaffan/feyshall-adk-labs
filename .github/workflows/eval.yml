@@ -25,9 +25,10 @@ jobs:
         run: pip install google-adk pytest
 
       - name: Run safety evaluation
-        run: python -m pytest tests/eval/test_safety.py --threshold 1.0
+        run: python -m pytest tests/eval/test_safety.py -v
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          EVAL_SAFETY_THRESHOLD: "1.0"
 
   accuracy-eval:
     runs-on: ubuntu-latest
@@ -43,9 +44,10 @@ jobs:
         run: pip install google-adk pytest
 
       - name: Run accuracy evaluation
-        run: python -m pytest tests/eval/test_accuracy.py --threshold 0.85
+        run: python -m pytest tests/eval/test_accuracy.py -v
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          EVAL_ACCURACY_THRESHOLD: "0.85"
 
   regression-test:
     runs-on: ubuntu-latest

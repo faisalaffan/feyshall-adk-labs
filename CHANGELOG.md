@@ -3,6 +3,7 @@
 ## [0.1.0] — 2026-05-28
 
 ### Added
+
 - 55 recipes across 10 chapters covering ADK foundations through real-world use cases
 - Dart ADK client library (`adk_client`) with REST wrapper and streaming support
 - Flutter agent chat widget (`agent_chat`) with streaming, tool progress, and retry
@@ -19,4 +20,4 @@
 - Pre-commit hooks (ruff, mypy, gitleaks)
 - Runnable Python code for 24+ recipes across all chapters
 
-[0.1.0]: https://github.com/feyshall/feyshall-adk-labs/releases/tag/v0.1.0
+[0.1.0]: https://github.com/faisalaffan/feyshall-adk-labs/releases/tag/v0.1.0

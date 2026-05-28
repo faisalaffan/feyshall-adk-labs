@@ -37,4 +37,4 @@ A strong recipe follows this structure:
 
 ## Need Help?
 
-Open a [discussion](https://github.com/feyshall/feyshall-adk-labs/discussions) or ask in an issue.
+Open a [discussion](https://github.com/faisalaffan/feyshall-adk-labs/discussions) or ask in an issue.

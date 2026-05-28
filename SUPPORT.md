@@ -8,9 +8,9 @@
 
 ## Getting Help
 
-- **Questions?** Open a [GitHub Discussion](https://github.com/feyshall/feyshall-adk-labs/discussions)
-- **Bug in a recipe?** Open an [issue](https://github.com/feyshall/feyshall-adk-labs/issues/new?template=bug_report.md)
-- **Request a recipe?** Open a [feature request](https://github.com/feyshall/feyshall-adk-labs/issues/new?template=feature_request.md)
+- **Questions?** Open a [GitHub Discussion](https://github.com/faisalaffan/feyshall-adk-labs/discussions)
+- **Bug in a recipe?** Open an [issue](https://github.com/faisalaffan/feyshall-adk-labs/issues/new?template=bug_report.md)
+- **Request a recipe?** Open a [feature request](https://github.com/faisalaffan/feyshall-adk-labs/issues/new?template=feature_request.md)
 
 ## Priority Support
 

@@ -1,7 +1,7 @@
 site_name: ADK Cookbook
 site_description: Production-ready recipes for Google Agent Development Kit
 site_url: https://feyshall.github.io/feyshall-adk-labs
-repo_url: https://github.com/feyshall/feyshall-adk-labs
+repo_url: https://github.com/faisalaffan/feyshall-adk-labs
 repo_name: feyshall/feyshall-adk-labs
 
 theme:
@@ -138,4 +138,4 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/feyshall/feyshall-adk-labs
+      link: https://github.com/faisalaffan/feyshall-adk-labs

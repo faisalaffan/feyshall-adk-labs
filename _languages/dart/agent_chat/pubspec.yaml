@@ -1,12 +1,12 @@
 name: agent_chat
 description: Flutter widget for ADK agent chat UI with streaming support
 version: 0.1.0
-repository: https://github.com/feyshall/feyshall-adk-labs
+repository: https://github.com/faisalaffan/feyshall-adk-labs
 publish_to: none
 
 environment:
   sdk: ^3.4.0
-  flutter: '>=3.22.0'
+  flutter: ">=3.22.0"
 
 dependencies:
   flutter:

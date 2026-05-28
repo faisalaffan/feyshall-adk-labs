@@ -15,6 +15,12 @@
 
 # feyshall-adk-labs
 
+<p align="center">
+  <a href="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/eval.yml"><img alt="Eval CI" src="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/eval.yml/badge.svg"></a>
+  <a href="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/security-scan.yml"><img alt="Security Scan" src="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/security-scan.yml/badge.svg"></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+</p>
+
 Google ADK Cookbook Untuk Pengembangan Yang Lebih Baik
 
 ## Gambaran Umum

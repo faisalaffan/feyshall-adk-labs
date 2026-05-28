@@ -15,6 +15,15 @@
 
 # feyshall-adk-labs
 
+<p align="center">
+  <a href="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/eval.yml"><img alt="Eval CI" src="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/eval.yml/badge.svg"></a>
+  <a href="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/security-scan.yml"><img alt="Security Scan" src="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/security-scan.yml/badge.svg"></a>
+  <a href="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/dart.yml"><img alt="Dart CI" src="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/dart.yml/badge.svg"></a>
+  <a href="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/go.yml"><img alt="Go CI" src="https://github.com/feyshall/feyshall-adk-labs/actions/workflows/go.yml/badge.svg"></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <a href="https://github.com/feyshall/feyshall-adk-labs"><img alt="GitHub stars" src="https://img.shields.io/github/stars/feyshall/feyshall-adk-labs"></a>
+</p>
+
 Google ADK Cookbook For Better Development Purpose
 
 ## Overview
@@ -35,9 +44,22 @@ cd feyshall-adk-labs
 
 ```
 feyshall-adk-labs/
-├── assets/          # Images and static assets
-├── docs/            # Documentation
-└── README.md        # You are here
+├── 00-foundations/          # ADK concepts, lifecycle, hello-world
+├── 01-tools/                # Function tools, MCP, auth, error handling
+├── 02-multi-agent/          # Orchestration patterns, routing, isolation
+├── 03-memory-and-state/    # Sessions, Redis, vector memory
+├── 04-streaming/            # SSE, audio, frontend integration
+├── 05-evaluation-and-testing/ # Unit tests, eval metrics, CI pipelines
+├── 06-observability/        # OTel, LGTM, metrics, alerting
+├── 07-deployment/           # Docker, K8s, Vertex AI, Cloud Run
+├── 08-enterprise-patterns/  # RBAC, audit, rate limiting, cost mgmt
+├── 09-real-world-usecases/  # Inventory, support, code review, ERP
+├── _languages/              # Python, Go, Java, Dart setup + SDK
+├── .github/workflows/       # CI/CD pipelines
+├── helm/                    # Kubernetes Helm chart
+├── mkdocs/                  # Documentation site
+├── assets/                  # Images and static assets
+└── README.md                # You are here
 ```
 
 ## License

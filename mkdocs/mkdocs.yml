@@ -1,0 +1,141 @@
+site_name: ADK Cookbook
+site_description: Production-ready recipes for Google Agent Development Kit
+site_url: https://feyshall.github.io/feyshall-adk-labs
+repo_url: https://github.com/feyshall/feyshall-adk-labs
+repo_name: feyshall/feyshall-adk-labs
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - footnotes
+  - toc:
+      permalink: true
+
+nav:
+  - Home: README.md
+  - Foundations:
+      - "00-foundations/README.md"
+      - "What is ADK vs LangChain vs CrewAI": "00-foundations/what-is-adk-vs-langchain-vs-crewai.md"
+      - "Agent Lifecycle": "00-foundations/agent-lifecycle.md"
+      - "Model Configuration": "00-foundations/model-configuration.md"
+      - "ADK vs MCP Relationship": "00-foundations/adk-vs-mcp-relationship.md"
+      - "First Agent Hello World (Python)": "00-foundations/first-agent-hello-world/python/README.md"
+      - "First Agent Hello World (Go)": "00-foundations/first-agent-hello-world/go/README.md"
+      - "First Agent Hello World (Java)": "00-foundations/first-agent-hello-world/java/README.md"
+      - "First Agent Hello World (Dart)": "00-foundations/first-agent-hello-world/dart/README.md"
+  - Tools:
+      - "01-tools/README.md"
+      - "Function Tool Basics": "01-tools/function-tool-basics/README.md"
+      - "Built-in Tools": "01-tools/built-in-tools/README.md"
+      - "MCP Tool Integration": "01-tools/mcp-tool-integration/README.md"
+      - "LangChain Tool Adapter": "01-tools/langchain-tool-adapter/README.md"
+      - "Tool With Auth": "01-tools/tool-with-auth/README.md"
+      - "Async Tools": "01-tools/async-tools/README.md"
+      - "Tool Error Handling": "01-tools/tool-error-handling.md"
+  - Multi-Agent:
+      - "02-multi-agent/README.md"
+      - "Sequential Pipeline": "02-multi-agent/sequential-pipeline/README.md"
+      - "Parallel Agents": "02-multi-agent/parallel-agents/README.md"
+      - "Hierarchical Orchestration": "02-multi-agent/hierarchical-orchestration/README.md"
+      - "Agent as Tool": "02-multi-agent/agent-as-tool/README.md"
+      - "Dynamic Routing": "02-multi-agent/dynamic-routing/README.md"
+      - "Inter-Agent Context Passing": "02-multi-agent/inter-agent-context-passing.md"
+      - "Failure Isolation": "02-multi-agent/failure-isolation.md"
+  - Memory & State:
+      - "03-memory-and-state/README.md"
+      - "Session Management": "03-memory-and-state/session-management/README.md"
+      - "Redis Session Backend": "03-memory-and-state/redis-session-backend/README.md"
+      - "Long-Term Memory": "03-memory-and-state/long-term-memory/README.md"
+      - "Context Compaction": "03-memory-and-state/context-compaction.md"
+      - "Stateful Multi-Turn": "03-memory-and-state/stateful-multi-turn/README.md"
+  - Streaming:
+      - "04-streaming/README.md"
+      - "SSE Streaming Basic": "04-streaming/sse-streaming-basic/README.md"
+      - "Bidirectional Audio": "04-streaming/bidirectional-audio/README.md"
+      - "Streaming Tool Results": "04-streaming/streaming-tool-results/README.md"
+      - "Frontend Integration": "04-streaming/frontend-integration/README.md"
+  - Evaluation & Testing:
+      - "05-evaluation-and-testing/README.md"
+      - "Unit Testing Agents": "05-evaluation-and-testing/unit-testing-agents/README.md"
+      - "Testing Sub-Agents": "05-evaluation-and-testing/testing-sub-agents/README.md"
+      - "Eval Metrics (Built-in)": "05-evaluation-and-testing/eval-metrics-builtin/README.md"
+      - "Custom Eval Criteria": "05-evaluation-and-testing/custom-eval-criteria/README.md"
+      - "Regression Testing Pipeline": "05-evaluation-and-testing/regression-testing-pipeline/README.md"
+      - "Prompt Injection Testing": "05-evaluation-and-testing/prompt-injection-testing.md"
+  - Observability:
+      - "06-observability/README.md"
+      - "OpenTelemetry Setup": "06-observability/otel-setup/README.md"
+      - "LGTM Stack Integration": "06-observability/lgtm-stack-integration/README.md"
+      - "AgentOps Integration": "06-observability/agentops-integration/README.md"
+      - "Custom Metrics": "06-observability/custom-metrics.md"
+      - "Alerting on Agent Behavior": "06-observability/alerting-on-agent-behavior.md"
+  - Deployment:
+      - "07-deployment/README.md"
+      - "Local Dev Setup": "07-deployment/local-dev-setup/README.md"
+      - "Docker Containerization": "07-deployment/docker-containerization/README.md"
+      - "Kubernetes Deployment": "07-deployment/kubernetes-deployment/README.md"
+      - "Vertex AI Agent Engine": "07-deployment/vertex-ai-agent-engine/README.md"
+      - "Cloud Run Deployment": "07-deployment/cloud-run-deployment/README.md"
+      - "Env Config Management": "07-deployment/env-config-management/README.md"
+  - Enterprise Patterns:
+      - "08-enterprise-patterns/README.md"
+      - "Multi-Tenancy": "08-enterprise-patterns/multi-tenancy.md"
+      - "RBAC for Agents": "08-enterprise-patterns/rbac-for-agents.md"
+      - "Audit Logging": "08-enterprise-patterns/audit-logging.md"
+      - "Rate Limiting Agents": "08-enterprise-patterns/rate-limiting-agents.md"
+      - "Human-in-the-Loop": "08-enterprise-patterns/human-in-the-loop/README.md"
+      - "Agent Versioning": "08-enterprise-patterns/agent-versioning.md"
+      - "Cost Management": "08-enterprise-patterns/cost-management.md"
+  - Real-World Use Cases:
+      - "09-real-world-usecases/README.md"
+      - "Inventory Demand Forecasting": "09-real-world-usecases/inventory-demand-forecasting/README.md"
+      - "Customer Support Agent": "09-real-world-usecases/customer-support-agent/README.md"
+      - "Code Review Agent": "09-real-world-usecases/code-review-agent/README.md"
+      - "Document Processing Pipeline": "09-real-world-usecases/document-processing-pipeline/README.md"
+      - "ERP Workflow Automation": "09-real-world-usecases/erp-workflow-automation/README.md"
+      - "E-Commerce Recommendation": "09-real-world-usecases/ecommerce-recommendation/README.md"
+  - Languages:
+      - "Python Setup": "_languages/python/setup.md"
+      - "Go Setup": "_languages/go/setup.md"
+      - "Java Setup": "_languages/java/setup.md"
+      - "Dart Setup": "_languages/dart/setup.md"
+      - "Flutter Agent Widget": "_languages/dart/flutter-agent-widget.md"
+      - "Claudio Bridge": "_languages/dart/claudio-bridge.md"
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/feyshall/feyshall-adk-labs

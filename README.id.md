@@ -21,6 +21,8 @@ Google ADK Cookbook Untuk Pengembangan Yang Lebih Baik
 
 Kumpulan resep, pola, dan praktik terbaik untuk membangun aplikasi dengan Google Agent Development Kit (ADK). Cookbook ini menyediakan contoh siap pakai untuk mempercepat pengembangan aplikasi berbasis agent.
 
+Lihat [Dokumen Persyaratan Produk](docs/PRD.md) untuk roadmap lengkap dan rincian bab.
+
 ## Memulai
 
 ```bash

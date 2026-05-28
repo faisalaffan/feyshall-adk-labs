@@ -5,10 +5,10 @@ import (
     "fmt"
     "os"
 
-    "github.com/google/adk-go/agent"
-    "github.com/google/adk-go/runner"
-    "github.com/google/adk-go/session"
-    "github.com/google/adk-go/tool"
+    "google.golang.org/adk/agent/llmagent"
+    "google.golang.org/adk/tool/functiontool"
+    "google.golang.org/adk/runner"
+    "google.golang.org/adk/session"
 )
 
 func greet(name string) string {
@@ -18,15 +18,19 @@ func greet(name string) string {
 func main() {
     ctx := context.Background()
 
-    a := agent.New(
-        agent.WithName("hello-world"),
-        agent.WithModel("gemini-2.5-flash"),
-        agent.WithInstruction("You are a friendly assistant. Use the greet tool when someone tells you their name."),
-        agent.WithTools(tool.NewFunction(greet)),
+    agent, err := llmagent.New(
+        llmagent.WithName("hello-world"),
+        llmagent.WithModel("gemini-2.5-flash"),
+        llmagent.WithInstruction("You are a friendly assistant. Use the greet tool when someone tells you their name."),
+        llmagent.WithTools(functiontool.New(greet)),
     )
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "error creating agent: %v\n", err)
+        os.Exit(1)
+    }
 
-    r := runner.New(a)
-    sess := session.NewInMemory("user-1")
+    r := runner.New(agent)
+    sess := session.NewInMemory()
 
     events, err := r.Run(ctx, "My name is Faisal", sess)
     if err != nil {

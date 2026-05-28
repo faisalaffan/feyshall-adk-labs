@@ -2,6 +2,7 @@ name: adk_client
 description: Thin REST wrapper for Google ADK agent runtime
 version: 0.1.0
 repository: https://github.com/feyshall/feyshall-adk-labs
+publish_to: none
 
 environment:
   sdk: ^3.4.0

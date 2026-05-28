@@ -4,7 +4,7 @@ Run: python 01-tools/mcp-tool-integration/main.py
 """
 import os
 from google.adk.agents import Agent
-from google.adk.tools import MCPTool, FunctionTool
+from google.adk.tools import MCPToolset, FunctionTool
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 
@@ -23,9 +23,8 @@ def main():
         tools=[
             FunctionTool(local_greet),
             # Uncomment and configure to use a real MCP server:
-            # MCPTool(
-            #     server_command=["npx", "-y", "@modelcontextprotocol/server-filesystem"],
-            #     args=["/tmp"],
+            # MCPToolset(
+            #     connection_params={"command": "npx", "args": ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"]},
             # ),
         ],
     )

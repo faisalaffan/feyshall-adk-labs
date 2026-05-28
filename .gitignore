@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env
+*.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Dart
+.dart_tool/
+.packages
+.pub/
+build/
+pubspec.lock
+
+# Go
+*.exe
+*.test
+*.out
+vendor/
+
+# Docker
+*.log
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# MkDocs
+mkdocs/site/
+
+# Git-crypt (managed separately)
+.git-crypt/
+
+# Secrets
+*.pem
+*.key
+credentials.json
+service-account.json
+
+# OS
+Thumbs.db

@@ -1,0 +1,40 @@
+name: Dart CI
+
+on:
+  pull_request:
+    paths:
+      - "_languages/dart/**"
+  push:
+    branches: [main, dev]
+    paths:
+      - "_languages/dart/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: [adk_client, agent_chat]
+
+    defaults:
+      run:
+        working-directory: _languages/dart/${{ matrix.package }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: "3.4.0"
+
+      - name: Install dependencies
+        run: dart pub get
+
+      - name: Analyze
+        run: dart analyze
+
+      - name: Run tests
+        run: dart test
+
+      - name: Check formatting
+        run: dart format --output=none --set-exit-if-changed lib test

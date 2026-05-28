@@ -1,0 +1,55 @@
+name: Security Scan
+
+on:
+  pull_request:
+    paths:
+      - "agents/**"
+      - "tools/**"
+      - "prompts/**"
+      - "**/recipe/**"
+  schedule:
+    - cron: "0 8 * * 1" # Every Monday at 8am
+
+jobs:
+  prompt-injection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install google-adk pytest
+
+      - name: Run prompt injection test suite
+        run: python -m pytest tests/eval/test_prompt_injection.py -v
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+  secret-detection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detect secrets in code
+        uses: gitleaks/gitleaks-action@v2
+        with:
+          config-path: .gitleaks.toml
+
+  dependency-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Python dependency audit
+        run: |
+          pip install pip-audit
+          find . -name "requirements*.txt" -exec pip-audit -r {} \;
+
+      - name: Go vulnerability check
+        uses: golang/govulncheck-action@v1
+        with:
+          go-version: "1.22"

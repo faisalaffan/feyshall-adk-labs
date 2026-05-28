@@ -1,0 +1,66 @@
+name: Agent Evaluation
+
+on:
+  pull_request:
+    paths:
+      - "agents/**"
+      - "tools/**"
+      - "prompts/**"
+      - "**/recipe/**"
+  push:
+    branches: [main, dev]
+
+jobs:
+  safety-eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install google-adk pytest
+
+      - name: Run safety evaluation
+        run: python -m pytest tests/eval/test_safety.py --threshold 1.0
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+  accuracy-eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install google-adk pytest
+
+      - name: Run accuracy evaluation
+        run: python -m pytest tests/eval/test_accuracy.py --threshold 0.85
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+  regression-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install google-adk pytest
+
+      - name: Run regression tests
+        run: python -m pytest tests/eval/test_regression.py -v
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}

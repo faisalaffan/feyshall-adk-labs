@@ -1,0 +1,11 @@
+# GitLeaks configuration for ADK Cookbook
+title = "ADK Cookbook GitLeaks Config"
+
+[allowlist]
+description = "Allowlist for test files and docs"
+
+paths = [
+    '''05-evaluation-and-testing/prompt-injection-testing\.md''',
+    '''docs/internal/.*''',
+    '''_languages/.*/setup\.md''',
+]
